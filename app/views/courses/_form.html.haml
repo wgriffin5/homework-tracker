@@ -1,0 +1,10 @@
+= form_for @course do |c|
+  %br
+  = c.label :name
+  = c.text_field :name
+  %br
+  = c.label :description
+  = c.text_field :description
+  %br
+  = c.submit
+  %br

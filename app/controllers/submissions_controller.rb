@@ -44,3 +44,4 @@ def submission_params
     comment_ids: []
     )
 end
+end

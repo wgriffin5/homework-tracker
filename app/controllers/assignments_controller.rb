@@ -43,3 +43,4 @@ def hospital_params
     comments: []
 )
 end
+end 

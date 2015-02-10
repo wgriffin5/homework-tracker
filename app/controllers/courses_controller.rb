@@ -40,3 +40,4 @@ def course_params
     )
 
 end
+end
