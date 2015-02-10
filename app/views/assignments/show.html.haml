@@ -1,1 +1,11 @@
-show.html.haml
+%br
+Name:
+= @assignment.name
+%br
+Requirements:
+= @assignment.requirements
+%br
+%br
+= link_to "Edit", edit_assignment_path(@assignment)
+%br
+= link_to "Delete", delete_assignment_path(@assignment), method: :delete
