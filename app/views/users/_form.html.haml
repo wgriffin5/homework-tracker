@@ -1,0 +1,33 @@
+= link_to "Home", root_path
+= link_to "Users", users_path
+= link_to "Assignments", assignments_path
+= link_to "Courses", courses_path
+= link_to "Locations", locations_path
+= link_to "Submissions", submissions_path
+
+%br
+%br
+
+= form_for @user do |u|
+  %br
+  = u.label :name
+  = u.text_field :name
+  %br
+  = u.label :password
+  = u.text_field :password
+  %br
+  = u.label :password_confirmation
+  = u.label :password_confirmation
+  %br 
+  = u.label :email
+  = u.text_field :email
+  = u.label :github_name
+  = u.text_field :github_name
+  %br
+  - @courses.each do |c|
+    = check_box_tag 'course_ids', u.id, @courses.include?(c)
+    = c.name
+  =u.submit 
+
+
+
