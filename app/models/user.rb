@@ -8,4 +8,5 @@ has_many :assignments
 has_many :submissions
 has_many :comments
 
+
 end

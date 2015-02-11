@@ -1,0 +1,16 @@
+.container 
+  .jumbotron
+    %h1 Dynamic Educational Environment Platform
+    %p 
+    - if user_signed_in?
+  
+      Welcome #{current_user.email}
+      = link_to 'Logged In [click to logout]', destroy_user_session_path, :method => :delete
+    - else
+      = link_to 'Login', new_user_session_path,
+        :class => 'btn btn-primary btn-md'
+      = link_to 'Register', new_user_registration_path,   :class => "btn btn-primary btn-lg"  
+
+
+
+/ {:href => "#", :role => "button"}

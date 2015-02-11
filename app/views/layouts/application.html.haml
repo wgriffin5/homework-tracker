@@ -9,13 +9,13 @@
 %p.notice= notice
 %p.alert= alert
 
-- if current_user
-  %li
-    = link_to "Logout #{current_user.email}", destroy_user_session_path, method: :delete
-- else
-  %li
-    = link_to 'Register', new_user_registration_path
-  %li
-    = link_to 'Login', new_user_session_path
+/ - if current_user
+/   %li
+/     = link_to "Logout #{current_user.email}", destroy_user_session_path, method: :delete
+/ - else
+/   %li
+/     = link_to 'Register', new_user_registration_path
+/   %li
+/     = link_to 'Login', new_user_session_path
 = yield
-= render 'layouts/user_widget'
+/ = render 'layouts/user_widget'
