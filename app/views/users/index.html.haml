@@ -5,3 +5,20 @@ USERS
 = link_to "Courses", courses_path
 = link_to "Locations", locations_path
 = link_to "Submissions", submissions_path
+%br
+%br
+= link_to "Create User", new_user_path
+%br
+%br
+- @users.each do |user|
+  = link_to "View", user_path(user)
+  Name: 
+  = user.name
+  %br
+  Email: 
+  = user.email
+  %br
+  Github Name: 
+  = user.github_name
+  %br
+  %br

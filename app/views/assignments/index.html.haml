@@ -5,3 +5,15 @@ Assignments
 = link_to "Courses", courses_path
 = link_to "Locations", locations_path
 = link_to "Submissions", submissions_path
+%br
+%br
+= link_to "Create Assignment", new_assignment_path
+%br
+%br
+-@assignments.each do |a|
+  = link_to "View Assignment", assignment_path(a) 
+  Name: 
+  = a.name
+  %br
+  Requirements: 
+  = a.requirements

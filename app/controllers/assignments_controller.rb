@@ -2,6 +2,7 @@ class AssignmentsController < ApplicationController
 
 def index
   @assignments = Assignment.all
+  
 end
 
 def new
@@ -25,7 +26,7 @@ end
 def update
   @assignment = Assignment.find params[:id]
   @assignment.update_attributes assignment_params
-  redirect_to assignment_path(@assignment)
+  redirect_to assignments_path(@assignment)
 end
 
 def destroy

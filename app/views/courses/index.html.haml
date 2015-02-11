@@ -5,3 +5,20 @@ Courses
 = link_to "Courses", courses_path
 = link_to "Locations", locations_path
 = link_to "Submissions", submissions_path
+
+%br
+%br
+= link_to "Create Course", new_course_path
+%br
+%br
+- @courses.each do |c|
+  = link_to "View Course", course_path(c)
+  %br
+  Name: 
+  = c.name
+  %br
+  %br
+  Description: 
+  = c.description
+  %br
+  %br

@@ -5,3 +5,18 @@ Submissions
 = link_to "Courses", courses_path
 = link_to "Locations", locations_path
 = link_to "Submissions", submissions_path
+%br
+%br
+= link_to "Create Submission", new_submission_path
+%br
+%br
+- @submissions.each do |s|
+  = link_to "View Submission", submission_path(s)
+  %br
+  Name: 
+  = s.name
+  %br
+  Description: 
+  = s.description
+  %br
+  %br

@@ -9,7 +9,7 @@ def new
 end
 
 def create
-  @location = Location.create hospital_params
+  @location = Location.create location_params
   redirect_to locations_path
 end
 
@@ -19,12 +19,16 @@ end
 
 def edit
   @location = Hospital.find params[:id]
+  @courses = Course.all
 end
 
 
 def update
   @location = Location.find params[:id]
-  redirect
+  @location.update_attributes location_params
+  @course = @location.courses
+  redirect_to locations_path
+
 end
 
 def destroy
@@ -38,7 +42,9 @@ def hospital_params
   params.require(:location).permit(
     :name,
     :address,
+    location_ids: [],
     course_ids: [],
+
 
     )
 

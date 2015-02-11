@@ -6,7 +6,7 @@ end
 
 def new
   @submission = Submission.new
-  @submissions = Submission.all
+  
 end 
 
 def create
@@ -38,10 +38,11 @@ private
 def submission_params
   params.require(:submission).permit(
     :name,
-    assignment_ids: [],
-    user_ids: [],
-    link_ids: [],
-    comment_ids: []
+    :description
+    # assignment_ids: [],
+    # user_ids: [],
+    # link_ids: [],
+    # comment_ids: []
     )
 end
 end

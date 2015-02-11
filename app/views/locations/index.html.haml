@@ -1,7 +1,23 @@
-Locations
+Locations 
 = link_to "Home", root_path
 = link_to "Users", users_path
 = link_to "Assignments", assignments_path
 = link_to "Courses", courses_path
 = link_to "Locations", locations_path
 = link_to "Submissions", submissions_path
+%br
+%br
+
+=link_to "Create Location", new_location_path 
+%br
+%br
+- @locations.each do |l|
+  = link_to 'View Location', location_path(l)
+  %br
+  Name: 
+  = l.name
+  %br
+  Address: 
+  = l.address
+  %br
+  %br

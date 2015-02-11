@@ -25,10 +25,13 @@ end
 def update
   @course = Course.find params[:id]
   @course.update_attributes course_params
-  redirect_to course_path(@course)
+  redirect_to courses_path(@course)
 end
 
 def destroy
+  @course = Course.find params[:id]
+  @course.delete
+  redirect_to courses_path
 end
 
 private
@@ -36,6 +39,7 @@ def course_params
   params.requires(:course).permit(
     :name,
     :description,
+    course_ids: [],
     location_ids: []
     )
 
