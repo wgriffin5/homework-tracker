@@ -36,7 +36,7 @@ def destroy
 end
 
 private
-def hospital_params
+def assignment_params
   params.require(:assignment).permit(
     :name,
     :requirements,

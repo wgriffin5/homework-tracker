@@ -16,8 +16,8 @@
   = u.label :password
   = u.text_field :password
   %br
-  = u.label :password_confirmation
-  = u.label :password_confirmation
+  / = u.label :password_confirmation
+  / = u.label :password_confirmation
   %br 
   = u.label :email
   = u.text_field :email
@@ -26,7 +26,7 @@
   = u.text_field :github_name
   %br
   - @courses.each do |c|
-    = check_box_tag 'course_ids', u.id, @courses.include?(c)
+    = check_box_tag 'course_ids', c.id, @courses.include?(c)
     = c.name
   =u.submit 
 

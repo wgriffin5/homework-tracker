@@ -38,7 +38,7 @@ def destroy
 end
 
 private
-def hospital_params
+def location_params
   params.require(:location).permit(
     :name,
     :address,

@@ -8,6 +8,7 @@ end
 
 def new
   @user = User.new
+  @courses = Course.all
 end
 
 def create

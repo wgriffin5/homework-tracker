@@ -36,7 +36,7 @@ end
 
 private
 def course_params
-  params.requires(:course).permit(
+  params.require(:course).permit(
     :name,
     :description,
     course_ids: [],
