@@ -1,5 +1,6 @@
 class AssignmentsController < ApplicationController
 
+before_action :authenticate_user!
 def index
   @assignments = Assignment.all
   
@@ -17,6 +18,7 @@ end
 
 def show
   @assignment = Assignment.find params[:id]
+  @comment = Comment.new
 end
 
 def edit
@@ -28,6 +30,10 @@ def update
   @assignment.update_attributes assignment_params
   redirect_to assignments_path(@assignment)
 end
+
+def comment
+  @assignment = Assignmnet.find params[:id]
+  
 
 def destroy
   @assignment = Assignment.find params[:id]

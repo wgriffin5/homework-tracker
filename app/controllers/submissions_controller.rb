@@ -5,8 +5,7 @@ def index
 end
 
 def new
-  @submission = Submission.new
-  
+  @submission = Submission.new 
 end 
 
 def create
@@ -35,6 +34,7 @@ def destroy
 end 
 
 private
+
 def submission_params
   params.require(:submission).permit(
     :name,
@@ -46,3 +46,8 @@ def submission_params
     )
 end
 end
+
+
+
+
+
