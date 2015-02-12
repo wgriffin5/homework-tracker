@@ -6,6 +6,7 @@ end
 
 def new
   @location = Location.new
+  @courses = Course.all
 end
 
 def create
@@ -15,6 +16,7 @@ end
 
 def show
   @location = Location.find params[:id]
+  @courses = @location.courses 
 end
 
 def edit
@@ -26,9 +28,8 @@ end
 def update
   @location = Location.find params[:id]
   @location.update_attributes location_params
-  @course = @location.courses
   redirect_to locations_path
-
+  @course = @location.courses
 end
 
 def destroy

@@ -7,6 +7,7 @@ end
 
 def new 
   @course = Course.new
+  @locations = Location.all
 
 end
 
@@ -17,10 +18,12 @@ end
 
 def show
   @course = Course.find params[:id]
+  @locations = @course.locations
 end
 
 def edit
   @course = Course.find params[:id]
+  @locations = Location.all
 end
 
 def update
@@ -40,7 +43,7 @@ def course_params
   params.require(:course).permit(
     :name,
     :description,
-    course_ids: [],
+    # course_ids: [],
     location_ids: []
     )
 
