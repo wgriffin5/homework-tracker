@@ -35,6 +35,19 @@ def destroy
   redirect_to users_path
 end
 
+def adminize
+  if current_user.admin?
+    @user = User.find(params[:id])
+    @user.update_attribute :admin, true
+  else
+    ######
+    redirect_to root_path
+
+
+end 
+
+
+###other admin stuff ???
 private
 def user_params
   params.require(:user).permit(

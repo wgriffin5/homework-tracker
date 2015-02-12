@@ -5,6 +5,8 @@ Description:
 = @assignment.description
 %br
 %br
+State :
+= @submission.workflow_state.capitalize.
 = link_to "Edit", edit_assignment_path(@assignment)
 %br
 = link_to "Delete", assignment_path(@assignment), method: :delete 
