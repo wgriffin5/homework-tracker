@@ -1,7 +1,20 @@
 class SubmissionsController < ApplicationController
 
+before_action :set_submission, only: [
+  :show,
+  :edit,
+  :update,
+  :destroy,
+  :submitted_submission,
+  :reviewing_submission,
+  :completed_submission,
+  :incompleted_submission
+]
+
+
 def index 
   @submissions = Submission.all
+  
 end
 
 def new
@@ -35,19 +48,14 @@ end
 
 private
 
-def submission_params
-  params.require(:submission).permit(
-    :name,
-    :description
-    # assignment_ids: [],
-    # user_ids: [],
-    # link_ids: [],
-    # comment_ids: []
-    )
+  def submission_params
+    params.require(:submission).permit(
+      :name,
+      :description
+      # assignment_ids: [],
+      # user_ids: [],
+      # link_ids: [],
+      # comment_ids: []
+      )
+  end
 end
-end
-
-
-
-
-

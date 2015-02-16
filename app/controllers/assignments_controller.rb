@@ -1,14 +1,13 @@
 class AssignmentsController < ApplicationController
 
 before_action :authenticate_user!
+
 def index
-  @assignments = Assignment.all
-  
+  @assignments = Assignment.all  
 end
 
 def new
   @assignment = Assignment.new
-
 end
 
 def create
@@ -42,6 +41,7 @@ def destroy
 end
 
 private
+
 def assignment_params
   params.require(:assignment).permit(
     :name,
@@ -50,4 +50,5 @@ def assignment_params
     comments: []
 )
 end
-end 
+end
+end

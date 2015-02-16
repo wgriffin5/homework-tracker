@@ -7,10 +7,18 @@ Rails.application.routes.draw do
    root 'home#index'
 
    resources :users
-   resources :assignments
+   resources :assignments do
+    resources :submissions
+      member do 
+        patch :submission_submitted
+        patch :submission_reviewing
+        patch :submission_completed
+        patch :submission_incompleted
+      end
+   end
    resources :locations
    resources :courses
-   resources :submissions
+   
    
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

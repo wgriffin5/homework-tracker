@@ -19,8 +19,10 @@
           %span.sr-only (current)
         %li 
           = link_to "Courses", courses_path
+        %li 
+          = link_to "Assignments", assignments_path
         %li
-          = link_to "Submissions", submissions_path 
+          = link_to "Submissions", assignment_submissions_path(:assignment_id)
         %li.dropdown
           %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
             Dropdown
@@ -44,14 +46,14 @@
         %button.btn.btn-default{:type => "submit"} Submit
       %ul.nav.navbar-nav.navbar-right
         %li
-          %a{:href => "#"} Link
+          / = link_to "Google", 
         %li.dropdown
           %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
             Dropdown
             %span.caret
           %ul.dropdown-menu{:role => "menu"}
             %li
-              %a{:href => "#"} Action
+              = link_to "View"
             %li
               %a{:href => "#"} Another action
             %li

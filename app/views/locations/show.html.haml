@@ -13,3 +13,9 @@ Address:
 = link_to "Delete", location_path(@location), method: :delete
 %br
 / = link_to "View Courses"
+Courses Offered:
+
+- @location.courses.each do |c|
+  = c.name
+%br
+%br

@@ -4,6 +4,10 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :name %><br />
+    <%= f.name_field :name %>
+    sd
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
@@ -20,6 +24,18 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+
+  <div class="field">
+    <%=f.label :github_name %><br />
+    <%=f.text_field :github_name, autocomplete: "off" %>
+
+  <div class="check_box_tag">
+    <%=f.label :Enroll__in_Course %><br />
+    - @location_courses.each do |c| 
+    = check_box_tag 'location_courses_ids []', c.id, @location.courses.include?(c)
+    = c.name
+
+
 
   <div class="actions">
     <%= f.submit "Sign up" %>

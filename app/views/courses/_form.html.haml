@@ -6,5 +6,9 @@
   = c.label :description
   = c.text_field :description
   %br
+  - @locations.each do |l|
+    = check_box_tag 'course[location_ids][]', l.id, @course.locations.include?(l)
+    = l.name
+  %br
   = c.submit
   %br

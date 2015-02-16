@@ -2,6 +2,7 @@ class LocationsController < ApplicationController
 
 def index
   @locations = Location.all
+  # @courses = @location.courses
 end
 
 def new
@@ -16,11 +17,12 @@ end
 
 def show
   @location = Location.find params[:id]
-  @courses = @location.courses 
+  @course = @location.courses 
+  
 end
 
 def edit
-  @location = Hospital.find params[:id]
+  @location = Location.find params[:id]
   @courses = Course.all
 end
 
