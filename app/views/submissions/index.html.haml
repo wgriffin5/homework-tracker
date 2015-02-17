@@ -7,11 +7,11 @@ Submissions
 / = link_to "Submissions", submissions_path
 %br
 %br
-= link_to "Create Submission", new_submission_path
+= link_to "Create Submission", new_assignment_submission_path
 %br
 %br
 - @submissions.each do |s|
-  = link_to "View Submission", submission_path(s)
+  = link_to "View Submission", assignment_path(s)
   %br
   Name: 
   = s.name

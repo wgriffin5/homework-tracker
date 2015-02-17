@@ -26,6 +26,7 @@ end
 
 def update
   @assignment = Assignment.find params[:id]
+  # @assignment.update(assignment_params)
   @assignment.update_attributes assignment_params
   redirect_to assignments_path(@assignment)
 end
