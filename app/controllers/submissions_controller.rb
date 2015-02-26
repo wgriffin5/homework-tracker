@@ -13,6 +13,7 @@ before_action :set_submission, only: [
 
 
 def index 
+  # @assignment = Assignment.find params[:id]
   @submissions = Submission.all
   
 end
@@ -28,6 +29,7 @@ end
 
 def show 
   @submission = Submission.find params[:id]
+  @assignment = Assignment.find params[:id]
 end
 
 def edit

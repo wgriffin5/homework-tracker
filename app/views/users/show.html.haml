@@ -1,25 +1,25 @@
 %br
 %br 
-Name:
+%ul.dl-horizontal
+%dt Name
 = @user.name
 %br
 %br
-Password:
+%dt Password
 = @user.password
 %br 
 %br
-Email:
+%dt Email
 = @user.email
 %br
 %br
-Github Name:
+%dt Github Name
 = @user.github_name
-%br
 %br
 
 %br
-= link_to "Edit", edit_user_path(@user)
+= link_to "Edit", edit_user_path(@user), class: "btn btn-info"
 %br
-= link_to "Delete", user_path(@user), method: :delete
+= link_to "Delete", user_path(@user), method: :delete, class: "btn btn-info"
 %br
-/ = link_to "View Courses"
+

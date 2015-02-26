@@ -1,11 +1,11 @@
-%br
-Name:
+%ul.dl-horizontal
+%dt Name
 = @assignment.name
 %br
-Requirements:
+%dt Requirements
 = @assignment.requirements
 %br
 %br
-= link_to "Edit", edit_assignment_path(@assignment)
+= link_to "Edit", edit_assignment_path(@assignment), class: "btn btn-info"
 %br
-= link_to "Delete", assignment_submissions_path(@assignment), method: :delete
+= link_to "Delete", assignment_submissions_path(@assignment), method: :delete, class: "btn btn-info"

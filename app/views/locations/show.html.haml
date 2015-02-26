@@ -1,20 +1,19 @@
 %br
 %br
-Name:
+%ul.dl-horizontal
+%dt Name
 = @location.name
 %br 
-%br
-Address:
+%dt Address
 = @location.address
 %br
+= link_to "Edit", edit_location_path(@location), class: "btn btn-info"
 %br
-= link_to "Edit", edit_location_path(@location)
 %br
-= link_to "Delete", location_path(@location), method: :delete
+= link_to "Delete", location_path(@location), method: :delete, class: "btn btn-info"
 %br
-/ = link_to "View Courses"
-Courses Offered:
-
+%br
+%dt Courses Offered 
 - @location.courses.each do |c|
   = c.name
 %br
