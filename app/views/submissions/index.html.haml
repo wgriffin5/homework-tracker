@@ -1,21 +1,17 @@
 Submissions
-/ = link_to "Home", root_path
-/ = link_to "Users", users_path
-/ = link_to "Assignments", assignments_path
-/ = link_to "Courses", courses_path
-/ = link_to "Locations", locations_path
-/ = link_to "Submissions", submissions_path
+
 %br
 %br
-= link_to "Create Submission", new_assignment_submission_path
+= link_to "Create Submission", new_assignment_submission_path, class: "btn btn-primary"
 %br
 %br
 - @submissions.each do |s|
-  = link_to "View Submission", assignment_path(s)
-  %br
-  Name: 
+  %ul.dl-horizontal
+  %dt Name
   = s.name
   %br
-  Description: 
+  %dt Description 
   = s.description
+  %br
+  = link_to "View Submission", assignment_path(s), class: "btn btn-info"
   %br

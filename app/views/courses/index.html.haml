@@ -8,17 +8,19 @@ Courses
 
 %br
 %br
-= link_to "Create Course", new_course_path
+= link_to "Create Course", new_course_path, class: "btn btn-primary"
 %br
 %br
 - @courses.each do |c|
-  = link_to "View Course", course_path(c)
+  
+  %ul.dl-horizontal
   %br
-  Name: 
+  %dt Name 
   = c.name
   %br
-  %br
-  Description: 
+  %dt Description 
   = c.description
+  %br 
+  = link_to "View Course", course_path(c), class: "btn btn-primary"
   %br
   %br

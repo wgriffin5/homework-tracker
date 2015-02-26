@@ -1,9 +1,9 @@
-= link_to "Home", root_path
-= link_to "Users", users_path
-= link_to "Assignments", assignments_path
-= link_to "Courses", courses_path
-= link_to "Locations", locations_path
-= link_to "Submissions", assignment_submissions_path
+/ = link_to "Home", root_path
+/ = link_to "Users", users_path
+/ = link_to "Assignments", assignments_path
+/ = link_to "Courses", courses_path
+/ = link_to "Locations", locations_path
+/ = link_to "Submissions", assignment_submissions_path
 
 %br
 %br
@@ -25,10 +25,10 @@
   = u.label :github_name
   = u.text_field :github_name
   %br
-  - @location.courses.each do |c|
-    = check_box_tag 'course_ids', c.id, @courses.include?(c)
-    = c.name
-  =u.submit 
+  / - @location.courses.each do |c|
+  /   = check_box_tag 'course_ids', c.id, @courses.include?(c)
+  /   = c.name
+  / =u.submit 
 
 
 

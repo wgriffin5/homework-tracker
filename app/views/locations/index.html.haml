@@ -1,29 +1,19 @@
 Locations 
-/ = link_to "Home", root_path
-/ = link_to "Users", users_path
-/ = link_to "Assignments", assignments_path
-/ = link_to "Courses", courses_path
-/ = link_to "Locations", locations_path
-/ = link_to "Submissions", submissions_path
 %br
 %br
 
-=link_to "Create Location", new_location_path 
+=link_to "Create Location", new_location_path, class: "btn btn-primary" 
 %br
 %br
 - @locations.each do |l|
-  = link_to 'View Location', location_path(l)
-  %br
-  Name: 
+  %ul.dl-horizontal
+  %dt Name 
   = l.name
   %br
-  Address: 
+  %dt Address 
   = l.address
   %br
-  %br
-  Courses Offered:
-  %br
-  / - @courses.each do |c|
-  /   = c.name
-  / %br
-  / %br
+  / Courses Offered:
+  = link_to 'View Location', location_path(l), class: "btn btn-info"
+  %br 
+  

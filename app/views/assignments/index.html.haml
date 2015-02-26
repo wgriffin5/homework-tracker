@@ -1,21 +1,19 @@
 Assignments
-/ = link_to "Home", root_path
-/ = link_to "Users", users_path
-/ = link_to "Assignments", assignments_path
-/ = link_to "Courses", courses_path
-/ = link_to "Locations", locations_path
-/ = link_to "Submissions", submissions_path
+
 %br
 %br
-= link_to "Create Assignment", new_assignment_path
+= link_to "Create Assignment", new_assignment_path, class: "btn btn-primary"
 %br
 %br
 
 
 -@assignments.each do |a|
-  = link_to "View Assignment", assignment_path(a) 
-  Name: 
+  %ul.dl-horizontal
+  %dt Name 
   = a.name
   %br
-  Requirements: 
+  %dt Requirements 
   = a.requirements
+  = link_to "View Assignment", assignment_path(a), class: "btn btn-primary"
+  %br
+  %br

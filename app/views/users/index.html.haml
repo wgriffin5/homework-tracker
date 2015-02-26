@@ -1,24 +1,20 @@
 USERS
-/ = link_to "Home", root_path
-/ = link_to "Users", users_path
-/ = link_to "Assignments", assignments_path
-/ = link_to "Courses", courses_path
-/ = link_to "Locations", locations_path
-/ = link_to "Submissions", submissions_path
+
 %br
 %br
-= link_to "Create User", new_user_path
+= link_to "Create User", new_user_path, class: "btn btn-primary"
 %br
 %br
 - @users.each do |user|
-  = link_to "View", user_path(user)
-  Name: 
+  %ul.dl-horizontal
+  %dt Name
   = user.name
   %br
-  Email: 
+  %dt Email 
   = user.email
   %br
-  Github Name: 
+  %dt Github Name 
   = user.github_name
+  = link_to "View", user_path(user), class: "btn btn-info"
   %br
   %br
